@@ -1,0 +1,69 @@
+{
+  "title": "Welcome to The tChat",
+  "title2":"Log in with your account to continue",
+  "login": {
+    "title": "Welcome back",
+    "email":"Email Address",
+    "password":"Password",
+    "forget": "Forgot password?",
+    "button": "Continue",
+    "ask":"Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "signUp": {
+    "title": "Create Your Account",
+    "title2": "Enter Verification Code",
+    "title3": "Your Password",
+    "email":"Email Address",
+    "password":"Password",
+    "confirm":"Confirm Password",
+    "condition1": "Your password must content:",
+    "condition2": "At least 8 characters",
+    "condition3": "Those passwords should match.",
+    "button": "Continue",
+    "button2": "Get Code",
+    "ask":"Already have an account?",
+    "Login": "Log in"
+  },
+    "forget": {
+    "title": "Reset your password",
+    "content1": "Enter your email address and we will send you instructions to reset your password.",
+    "content2": "Email address",
+    "content3": "Email Code",
+    "content4": "Password",
+    "content5": "Confirm Password",
+    "button1": "Send Code",
+    "button2":"Back to Login",
+    "button3":"Continue"
+  },
+  "chatPage": {
+     "newChat": "New Chat",
+     "history": "History Chat",
+     "clearQuestion": "Clear question",
+     "clearAll": "ClearAll",
+     "clear": "Clear",
+     "save": "Save",
+     "darkMode":"Dark mode",
+     "lightMode":"Light mode",
+     "contact":"OpenAI WeChat",
+     "update":"Updates & FAQ",
+     "logout":"Log out",
+     "model":"Model",
+     "copied":"Copied",
+     "cancel":"Cancel"
+  },
+  "message": {
+    "title": "Message Box",
+    "new":"New Chat ",
+    "content1":"Create a new chat with chatGPT",
+     "clear":"Clear",
+    "content2":"Clear a chat history with chatGPT,remember to save.",
+     "save":"Save ",
+    "content3":"Save a chat history with chatGPT",
+    "model":"Model",
+    "content4":" {GPT : For text results. DALL-E: For image results}",
+    "content5":"Don't show again",
+    "button":"Confirm"
+
+  }
+}

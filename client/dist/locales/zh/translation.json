@@ -1,0 +1,69 @@
+{
+  "title": "欢迎使用 tChat",
+  "title2":"用你的账户登录以继续",
+  "login": {
+    "title": "欢迎回来",
+    "forget": "忘记密码?",
+    "button": "确认",
+    "ask":"没有账户吗?",
+    "signUp": "注册",
+    "email":"电子邮件",
+    "password":"密码"
+  },
+  "signUp": {
+    "title": "注册你的新账号",
+    "title2": "输入验证码",
+    "title3": "输入密码",
+    "email":"电子邮件",
+    "password":"密码",
+    "confirm":"确认密码",
+    "condition1": "你的密码必须满足:",
+    "condition2": "最少8位(不限于英文、数字和符号)",
+    "condition3": "确认密码需相同",
+    "button": "确认",
+    "button2": "获取验证码",
+    "ask":"已经有账号了吗?",
+    "Login": "登陆"
+  },
+   "forget": {
+    "title": "重设密码",
+    "content1": "输入你的电子邮件，我们会发验证码进行确认后，就可以更改新密码",
+    "content2": "电子邮件",
+    "content3": "验证码",
+    "content4": "密码",
+    "content5": "确认密码",
+    "button1": "获取验证码",
+    "button2":"回到登陆",
+    "button3":"确认"
+  },
+  "chatPage": {
+     "newChat": "新的聊天",
+     "history": "聊天记录",
+     "clearQuestion": "清除记录",
+     "clearAll": "清除全部",
+     "clear": "清除",
+     "save": "保存",
+     "darkMode":"暗黑模式",
+     "lightMode":"明亮模式",
+     "contact":"微信交流群",
+     "update":"更新 & 使用需知 ",
+     "logout":"登出",
+     "model":"模型",
+    "copied":"已复制",
+    "cancel":"Cancel"
+  },
+  "message": {
+    "title": "使用需知",
+    "new":"新的聊天 ",
+    "content1":"创建新的聊天和AI",
+     "clear":"清除",
+    "content2":"清除聊天记录，记得自行保存需要的记录",
+     "save":"保存",
+    "content3":"保存你和AI的聊天记录",
+    "model":"模型",
+    "content4":"{GPT : 返回文字答案. DALL-E: 图片生成器}",
+    "content5":"不要再显示",
+    "button":"确认"
+
+  }
+}
