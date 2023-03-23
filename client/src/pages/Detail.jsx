@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { styles } from "../styles";
 const Detail = () => {
+  const location = useLocation();
+  console.log(location);
   const ref = useRef(null);
   const [count, setCount] = useState(1);
+  const [item, setItem] = useState(location.state.data);
   const options = [
     {
       title: "Choose One - Salad",
@@ -51,8 +54,8 @@ const Detail = () => {
         {/* Image */}
         <div className="w-full  mt-3 relative">
           <img
-            className="rounded-t-2xl"
-            src="https://cdn.discordapp.com/attachments/1008571069797507102/1069963298176520222/xvh7ihmff7jjoqh_food_recipe_8044202e-50cf-4c80-94cf-c0367aabd460.png"
+            className="rounded-t-2xl w-full h-[300px] object-fill"
+            src={item.image}
           />
           <Link to="/menu">
             <div
@@ -68,18 +71,15 @@ const Detail = () => {
         <div className="pt-3 bg-gray-100/50 dark:bg-gray-100/10 dark:text-white ">
           {/* TITLE */}
           <div className=" border-b dark:border-gray-700 mx-2">
-            <p className="font-bold text-3xl">
-              Salad Lunch Set for 1 一人沙律餐
-            </p>
+            <p className="font-bold text-3xl">{item.name}</p>
             <p className="text-secondary text-sm mt-1 mb-2">
-              Choose 1 Salad 1 Soup or Drink & Slice of Bread
-              套餐包困沙律一份。果汁或是日餐汤一盒，可免费加配田园沙律
+              {item.description}
             </p>
           </div>
         </div>
         <div className=" bg-white dark:bg-dark dark:text-white ">
-          {options.map((item) => (
-            <>
+          {options.map((item, index) => (
+            <div key={index}>
               {/* Choose title */}
               <div className="mt-5 border-b dark:border-gray-700 mx-2">
                 <div className="flex justify-between mb-3">
@@ -89,15 +89,18 @@ const Detail = () => {
               </div>
               {/* Body */}
 
-              {item.options.map((option) => (
-                <div className="bg-white dark:bg-dark dark:text-white  border-b dark:border-gray-700 w-full flex justify-between p-2 text-sm">
+              {item.options.map((option, index) => (
+                <div
+                  key={index}
+                  className="bg-white dark:bg-dark dark:text-white  border-b dark:border-gray-700 w-full flex justify-between p-2 text-sm"
+                >
                   <div className="font-semibold pl-1 py-2">{option.name}</div>
                   <div className="pr-3">
                     <input type="checkbox" className="  mt-3" />
                   </div>
                 </div>
               ))}
-            </>
+            </div>
           ))}
         </div>
         <div className="h-36 bg-white dark:bg-dark dark:text-white "></div>

@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styles } from "../styles";
 import { Language, Mode } from "../components";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useGetInfoQuery } from "../services/menuApi";
 const Landing = (props) => {
+  const shopID = "63900dc12ba021e0a889d9e8";
+  const { data, isFetching } = useGetInfoQuery(shopID);
+
+  const [info, setInfo] = useState([]);
+  const fetchInfo = async () => {
+    setInfo(data);
+    setInfo((prev) => ({
+      ...prev,
+      logo: "https://cdn.discordapp.com/attachments/1008571141507534928/1061645975703269406/Gabriel_P223_Logo_H_letter_whit_book_microscope_science_trevel__b834b375-e5ce-47ed-9dfa-2e9c0aa589bc.png",
+    }));
+    setInfo((prev) => ({
+      ...prev,
+      category: 89,
+    }));
+  };
+  useEffect(() => {
+    fetchInfo();
+  }, [data]);
+  if (isFetching) return <div>Loading.......</div>;
   return (
-    <section className="relative w-full h-full mx-auto flex justify-center">
+    <section className="relative w-full h-screen mx-auto flex justify-center">
       <div className={`${styles.paddingX} mt-20 max-w-7xl `}>
         {/* DIV CLASS */}
         <div className=" flex justify-end">
@@ -14,17 +35,15 @@ const Landing = (props) => {
         {/* BG IMAGE */}
         <div className=" p-10">
           <img
-            src="https://cdn.discordapp.com/attachments/1008571069797507102/1069963298176520222/xvh7ihmff7jjoqh_food_recipe_8044202e-50cf-4c80-94cf-c0367aabd460.png"
+            src={info.logo}
             alt="banner"
-            className=" object-contain rounded-2xl "
+            className=" object-contain rounded-2xl w-[300px] h-[300px] "
           />
         </div>
         {/* TITLE */}
         <div className="">
-          <p className={`${styles.sectionSubText}`}>312+ Foods</p>
-          <p className={`${styles.sectionHeadText}`}>
-            Delicious Variant and Fast Delivery
-          </p>
+          <p className={`${styles.sectionSubText}`}>{info.category}+ Items</p>
+          <p className={`${styles.sectionHeadText}`}>{info.name}</p>
         </div>
 
         {/* Button */}
@@ -51,7 +70,10 @@ const Landing = (props) => {
             <span className={`${styles.sectionHeadText} text-black`}>12</span>
           </p> */}
 
-        {/* <p className="dark:text-white">@contact.com</p> */}
+        <p className="dark:text-white italic">{info.address?.[0].name}</p>
+        <p className={`${styles.sectionSubText} font-mono`}>
+          {info["working-hours-start"] + "-" + info["working-hours-end"]}
+        </p>
       </div>
     </section>
   );

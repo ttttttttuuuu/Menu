@@ -78,7 +78,7 @@ const Cart = () => {
         <div
           className={`${styles.text} flex justify-between py-3 px-3 border-b`}
         >
-          <Link to="/">
+          <Link to="/menu">
             <div>{"<--"}</div>
           </Link>
           <div>购物车</div>
